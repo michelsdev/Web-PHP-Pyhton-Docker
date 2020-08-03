@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'c98b50f4-42d7-411c-babc-cde0999f1202'
-  imageRepository: 'pyhton-back-api02'
+  imageRepository: 'python-back-api02'
   containerRegistry: 'michelsdev.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/back-api02/Dockerfile'
   tag: '$(Build.BuildId)'
