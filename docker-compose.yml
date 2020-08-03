@@ -41,10 +41,10 @@ services:
         ports:
             - 80
        
-    front:
+    front-website:
         image: php:apache
         volumes:
-            - ./website:/var/www/html
+            - ./front-website:/var/www/html
         ports:
             - 80
         labels:
