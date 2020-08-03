@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+    traefik:
+        image: traefik:v2.2
+        command: --api.insecure=true --providers.docker
+        ports:
+            - "80:80"
+            - "8080:8080"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            
+    back-api01:
+        build: ./back-api01
+        volumes:
+            - ./back-api01:/usr/src/app
+        ports:
+            - 80
+    back-api02:
+        build: ./back-api02
+        volumes:
+            - ./back-api02:/usr/src/app
+        ports:
+            - 80
+    back-api03:
+        build: ./back-api03
+        volumes:
+            - ./back-api03:/usr/src/app
+        ports:
+            - 80
+    back-api04:
+        build: ./back-api04
+        volumes:
+            - ./back-api04:/usr/src/app
+        ports:
+            - 80
+    back-api05:
+        build: ./back-api05
+        volumes:
+            - ./back-api05:/usr/src/app
+        ports:
+            - 80
+       
+    front:
+        image: php:apache
+        volumes:
+            - ./website:/var/www/html
+        ports:
+            - 80
+        labels:
+            - "traefik.http.routers.whoami.rule=Host(`front.docker.localhost`)"
+        depends_on:
+            - back-api01
+            - back-api02
+            - back-api03
+            - back-api04
+            - back-api05
+            - traefik
