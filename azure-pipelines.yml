@@ -29,7 +29,7 @@ variables:
 
 stages:
 - stage: Build_backapi01
-  displayName: Build and push stage - back-app01
+  displayName: Build and push stage - back-api01
   jobs:  
   - job: Build
     displayName: Build
@@ -46,7 +46,7 @@ stages:
         tags: |
           $(tag)
 - stage: Build_backapi02
-  displayName: Build and push stage - back-app02
+  displayName: Build and push stage - back-api02
   jobs:  
   - job: Build
     displayName: Build
@@ -63,7 +63,7 @@ stages:
         tags: |
           $(tag)
 - stage: Build_backapi03
-  displayName: Build and push stage - back-app03
+  displayName: Build and push stage - back-api03
   jobs:  
   - job: Build
     displayName: Build
@@ -80,7 +80,7 @@ stages:
         tags: |
           $(tag)
 - stage: Build_backapi04
-  displayName: Build and push stage - back-app04
+  displayName: Build and push stage - back-api04
   jobs:  
   - job: Build
     displayName: Build
@@ -97,7 +97,7 @@ stages:
         tags: |
           $(tag)
 - stage: Build_backapi05
-  displayName: Build and push stage - back-app05
+  displayName: Build and push stage - back-api05
   jobs:  
   - job: Build
     displayName: Build
