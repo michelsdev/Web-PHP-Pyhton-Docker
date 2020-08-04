@@ -22,7 +22,7 @@ variables:
   dockerfilePath03: '$(Build.SourcesDirectory)/back-api03/Dockerfile'
   dockerfilePath04: '$(Build.SourcesDirectory)/back-api04/Dockerfile'
   dockerfilePath05: '$(Build.SourcesDirectory)/back-api05/Dockerfile'
-  tag: '$(Build.BuildId), latest'
+  tag: '$(Build.BuildId),latest'
   
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
