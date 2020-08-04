@@ -28,7 +28,7 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Build
+- stage: Build back-api01
   displayName: Build and push stage - back-app01
   jobs:  
   - job: Build
@@ -45,7 +45,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-- stage: Build
+- stage: Build back-api02
   displayName: Build and push stage - back-app02
   jobs:  
   - job: Build
@@ -62,7 +62,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-- stage: Build
+- stage: Build back-api03
   displayName: Build and push stage - back-app03
   jobs:  
   - job: Build
@@ -79,7 +79,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-- stage: Build
+- stage: Build back-api04
   displayName: Build and push stage - back-app04
   jobs:  
   - job: Build
@@ -96,7 +96,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-- stage: Build
+- stage: Build back-api05
   displayName: Build and push stage - back-app05
   jobs:  
   - job: Build
