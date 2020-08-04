@@ -11,31 +11,31 @@ services:
             - /var/run/docker.sock:/var/run/docker.sock
             
     back-api01:
-        build: ./back-api01
+        image: python-back-api01:latest
         volumes:
             - ./back-api01:/usr/src/app
         ports:
             - 80
     back-api02:
-        build: ./back-api02
+        image: python-back-api02:latest
         volumes:
             - ./back-api02:/usr/src/app
         ports:
             - 80
     back-api03:
-        build: ./back-api03
+        image: python-back-api01:latest
         volumes:
             - ./back-api03:/usr/src/app
         ports:
             - 80
     back-api04:
-        build: ./back-api04
+        image: python-back-api01:latest
         volumes:
             - ./back-api04:/usr/src/app
         ports:
             - 80
     back-api05:
-        build: ./back-api05
+        image: python-back-api01:latest
         volumes:
             - ./back-api05:/usr/src/app
         ports:
