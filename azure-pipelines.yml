@@ -114,3 +114,18 @@ stages:
         tags: |
           $(tag)
 
+- stage: Deploy_Containeres
+  displayName: Deploy containeres
+  jobs:  
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - task: DockerCompose@0
+      inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: 'Azure Michels(1)(fa3d8a7b-e927-4cbb-a1e1-ff6edfaa5eb5)'
+        azureContainerRegistry: '{"loginServer":"michelsdev.azurecr.io", "id" : "/subscriptions/fa3d8a7b-e927-4cbb-a1e1-ff6edfaa5eb5/resourceGroups/rg-acr-devops/providers/Microsoft.ContainerRegistry/registries/michelsdev"}'
+        dockerComposeFile: '**/docker-compose.yml'
+        action: 'Run services'
